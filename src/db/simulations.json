@@ -1,0 +1,80 @@
+{
+  "simulations": [
+    {
+      "id": 1,
+      "title": "Graf Boyama Algoritması",
+      "desc": "Graf üzerindeki düğümleri minimum renkle boyayın.",
+      "image": "/images/simulations/GraphColoring.png",
+      "topic": "Graf",
+      "difficulty": "Orta",
+      "related_simulations": [3, 4],
+      "real_life_examples": [
+        {
+          "example": "Harita (ülke/eyalet) renkleme",
+          "image": "/images/real_life/colormap.jpeg"
+        },
+        {
+          "example": "Derleyici register atama optimizasyonu",
+          "image": "/images/real_life/register.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Bubble Sort",
+      "desc": "Sıralama algoritmalarının temelini öğrenin.",
+      "image": "/images/simulations/BubbleSort.jpeg",
+      "topic": "Sıralama",
+      "difficulty": "Kolay",
+      "related_simulations": [],
+      "real_life_examples": [
+        {
+          "example": "Oyun kağıtlarını ya da kartları el ile sıralamak",
+          "image": "/images/real_life/sortcards.jpeg"
+        },
+        {
+          "example": "Basit skor listesi güncellemeleri",
+          "image": "/images/real_life/tahta.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "BFS Algoritması",
+      "desc": "Genişlik öncelikli arama ile grafı keşfedin.",
+      "image": "/images/simulations/BFS.jpeg",
+      "topic": "Graf",
+      "difficulty": "Kolay",
+      "related_simulations": [1, 4],
+      "real_life_examples": [
+        {
+          "example": "Sosyal ağlarda arkadaş önerileri",
+          "image": "/images/real_life/sosyal.jpeg"
+        },
+        {
+          "example": "Ağırlıksız haritalarda en kısa mesafe katman katman arama",
+          "image": "/images/real_life/kisayol.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Dijkstra Algoritması",
+      "desc": "En kısa yolu adım adım bulun.",
+      "image": "/images/simulations/Pathfinding.jpeg",
+      "topic": "Graf",
+      "difficulty": "Zor",
+      "related_simulations": [1, 3],
+      "real_life_examples": [
+        {
+          "example": "GPS navigasyon rota hesaplama",
+          "image": "/images/real_life/yolbul.jpeg"
+        },
+        {
+          "example": "Ağ paket yönlendirme",
+          "image": "/images/real_life/network.jpeg"
+        }
+      ]
+    }
+  ]
+}

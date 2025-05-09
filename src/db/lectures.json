@@ -1,0 +1,185 @@
+[
+  {
+    "simulation_id": 1,
+    "title": "Graf Boyama: Detaylı Açıklama",
+    "sections": [
+      {
+        "heading": "1. Giriş",
+        "paragraphs": [
+          "Graf boyama, bir grafın düğümlerine (veya kenarlarına) renkler atayarak belirli kısıtları sağlamayı amaçlayan bir kombinatoryal optimizasyon problemidir. En yaygın versiyonu, komşu düğümlere aynı rengin atanmasını engelleyen \"proper\" boyamadır."
+        ]
+      },
+      {
+        "heading": "2. Temel Kavramlar",
+        "paragraphs": [
+          "Graf (G): G = (V, E) biçiminde gösterilir. V düğümler kümesi, E ise kenarlar kümesidir.",
+          "Proper Boyama: Hiçbir komşu düğüm çifti aynı rengi paylaşmaz. Kromatik Sayı (χ(G)): Bir grafı proper boyamak için gereken en az renk sayısı."
+        ]
+      },
+      {
+        "heading": "3. Yaygın Algoritmalar",
+        "paragraphs": [
+          "Greedy (Açgözlü): Düğümleri sıralayıp her düğüme mevcut en küçük uygun rengi atar. Özellik: Hızlı ama sıralamaya duyarlı.",
+          "Welsh–Powell: Düğümleri azalan dereceye göre sıralar, sonra Greedy uygular. Özellik: Genelde daha az renk kullanır.",
+          "DSATUR: Önceliği, çevresinde en çok farklı renkli komşusu olan düğüme verir. Pratikte çok başarılıdır."
+        ]
+      },
+      {
+        "heading": "4. Karmaşıklık ve Teoremler",
+        "paragraphs": [
+          "Graf boyama genel olarak NP-tamdır; χ(G)'yi bulmak veya k renkle boyanabilirliği test etmek NP-zor problemler arasındadır.",
+          "Dört Renk Teoremi: Her düzlemsel graf en fazla 4 renkle boyanabilir.",
+          "Brooks Teoremi: Bağlantılı graflar için χ(G) ≤ Δ(G), tam graflar ve tekil kenar grafı hariç."
+        ]
+      },
+      {
+        "heading": "5. Uygulama Alanları",
+        "list": [
+          "Harita Boyama (komşu bölgeler)",
+          "Register Allocation (derleyici optimizasyonu)",
+          "Zaman Çizelgeleme, Frekans Ataması vb."
+        ]
+      },
+      {
+        "heading": "6. Örnek Adım Adım",
+        "paragraphs": [
+          "V = {A,B,C,D,E}, E = {{A,B},{A,C},{B,C},{B,D},{C,E}}. Azalan derece sırasına göre B(3), C(3), A(2), D(1), E(1). Renk atamaları: B→1, C→2, A→3, D→2, E→1 → Kullanılan renk sayısı: 3."
+        ]
+      }
+    ]
+  },
+  {
+    "simulation_id": 2,
+    "title": "Bubble Sort: Detaylı Açıklama",
+    "sections": [
+      {
+        "heading": "1. Giriş",
+        "paragraphs": [
+          "Bubble Sort, bitişik elemanları karşılaştırıp gerektiğinde takas yaparak her turda en büyük (ya da en küçük) öğeyi sona iten basit bir sıralama algoritmasıdır."
+        ]
+      },
+      {
+        "heading": "2. Temel Kavramlar",
+        "paragraphs": [
+          "Dizi (Array): Sabit boyutlu, indeksli veri koleksiyonu.",
+          "Takas (Swap): İki elemanın yerlerini değiştirerek sıralama sağlar."
+        ]
+      },
+      {
+        "heading": "3. Algoritma Adımları",
+        "paragraphs": [
+          "n elemanlı dizide i turunda son i eleman zaten sıralı kabul edilir.",
+          "j = 0’dan n-i-2’ye kadar her bitişik çift karşılaştırılır ve gerekirse yer değiştirilir."
+        ]
+      },
+      {
+        "heading": "4. Zaman Karmaşıklığı",
+        "paragraphs": [
+          "En Kötü Durum: O(n²)",
+          "En İyi Durum: O(n) (dizi önceden sıralıysa, optimizasyonla)",
+          "Ortalama Durum: O(n²)"
+        ]
+      },
+      {
+        "heading": "5. Uygulama Alanları",
+        "list": [
+          "Veri yapıları öğretim örnekleri",
+          "Küçük veri kümesi sıralamaları ve prototipleme"
+        ]
+      },
+      {
+        "heading": "6. Örnek Adım Adım",
+        "paragraphs": [
+          "Dizi = [5, 3, 8, 4], Tur 1: [3,5,4,8], Tur 2: [3,4,5,8] → Sonuç: [3,4,5,8]"
+        ]
+      }
+    ]
+  },
+  {
+    "simulation_id": 3,
+    "title": "BFS Algoritması: Detaylı Açıklama",
+    "sections": [
+      {
+        "heading": "1. Giriş",
+        "paragraphs": [
+          "Breadth-First Search (Genişlik Öncelikli Arama), bir graf üzerinde katman katman ilerleyerek önce en yakın düğümleri keşfeden gezme algoritmasıdır."
+        ]
+      },
+      {
+        "heading": "2. Temel Kavramlar",
+        "paragraphs": [
+          "Graf (G = V, E): V düğümler, E kenarlar kümesi.",
+          "Kuyruk (Queue): FIFO yapısı; keşif sırasını tutar."
+        ]
+      },
+      {
+        "heading": "3. Çalışma Prensibi",
+        "paragraphs": [
+          "Başlangıç düğümünü kuyruğa ekle ve işaretle.",
+          "Kuyruğun önünden çıkart, komşularını işaretle ve kuyruğa ekle.",
+          "Kuyruk boşalana dek devam et."
+        ]
+      },
+      {
+        "heading": "4. Zaman Karmaşıklığı",
+        "paragraphs": [
+          "O(V + E) — Tüm düğümler ve kenarlar en fazla bir kez işlenir."
+        ]
+      },
+      {
+        "heading": "5. Uygulama Alanları",
+        "list": ["Sosyal ağ dolaşımı", "Katmanlı harita en kısa yol bulma"]
+      },
+      {
+        "heading": "6. Örnek Adım Adım",
+        "paragraphs": [
+          "Graf: A→B,C; B→A,D,E; C→A,F; D→B; E→B,F; F→C,E. BFS(A) → A → B,C → D,E → F"
+        ]
+      }
+    ]
+  },
+  {
+    "simulation_id": 4,
+    "title": "Dijkstra Algoritması: Detaylı Açıklama",
+    "sections": [
+      {
+        "heading": "1. Giriş",
+        "paragraphs": [
+          "Dijkstra, ağırlıklı graf üzerinde bir başlangıç düğümünden tüm diğer düğümlere en kısa mesafeyi hesaplayan öncelikli kuyruk temelli algoritmadır."
+        ]
+      },
+      {
+        "heading": "2. Temel Kavramlar",
+        "paragraphs": [
+          "Ağırlıklı Graf: Kenarların pozitif ağırlıkları vardır.",
+          "Min-Heap (Öncelikli Kuyruk): En küçük mesafeyi hızlı seçer."
+        ]
+      },
+      {
+        "heading": "3. Algoritma Adımları",
+        "paragraphs": [
+          "Tüm mesafeleri ∞ olarak başlat, start = 0.",
+          "Öncelikli kuyruğa (0, start) ekle.",
+          "Kuyruktan en küçük uzaklıklı düğümü al, komşuları güncelle ve kuyruğa ekle.",
+          "Kuyruk boşalana dek sürdür."
+        ]
+      },
+      {
+        "heading": "4. Zaman Karmaşıklığı",
+        "paragraphs": [
+          "O((V + E) log V) — Öncelikli kuyruk işlemleri dominanttır."
+        ]
+      },
+      {
+        "heading": "5. Uygulama Alanları",
+        "list": ["GPS rota planlama", "Ağ yönlendirme protokolleri"]
+      },
+      {
+        "heading": "6. Örnek Adım Adım",
+        "paragraphs": [
+          "Graf: A–5→B, A–1→C, B–1→D. Başlangıç mesafeleri {A:0, B:∞, C:∞, D:∞}. Güncellemeler C=1, B=5, D=6 → Sonuç: {A:0, B:5, C:1, D:6}"
+        ]
+      }
+    ]
+  }
+]

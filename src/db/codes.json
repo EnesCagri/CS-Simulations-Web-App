@@ -1,0 +1,84 @@
+{
+  "codes": [
+    {
+      "simulation_id": 1,
+      "codeTabs": [
+        {
+          "label": "Python",
+          "language": "python",
+          "code": "def greedy_coloring(adj):\n    \"\"\"\n    adj: dict {node: [komşu1, komşu2, ...]}\n    döndürür: dict {node: renk}\n    \"\"\"\n    color = {u: None for u in adj}\n\n    for u in adj:\n        used = {color[v] for v in adj[u] if color[v] is not None}\n        c = 0\n        while c in used:\n            c += 1\n        color[u] = c\n\n    return color\n\n\nif __name__ == \"__main__\":\n    adj = {\n        0: [1, 2],\n        1: [0, 2, 3],\n        2: [0, 1, 4],\n        3: [1],\n        4: [2]\n    }\n    result = greedy_coloring(adj)\n    for node, clr in result.items():\n        print(f\"Düğüm {node} → Renk {clr}\")"
+        },
+        {
+          "label": "Java",
+          "language": "java",
+          "code": "import java.util.*;\n\npublic class GraphColoring {\n    private int V;\n    private List<List<Integer>> adj;\n\n    public GraphColoring(int vertices) {\n        V = vertices;\n        adj = new ArrayList<>();\n        for (int i = 0; i < V; i++) adj.add(new ArrayList<>());\n    }\n\n    public void addEdge(int u, int v) {\n        adj.get(u).add(v);\n        adj.get(v).add(u);\n    }\n\n    public int[] greedyColoring() {\n        int[] result = new int[V];\n        Arrays.fill(result, -1);\n        result[0] = 0;\n        boolean[] available = new boolean[V];\n        Arrays.fill(available, true);\n\n        for (int u = 1; u < V; u++) {\n            for (int neighbor : adj.get(u)) {\n                if (result[neighbor] != -1)\n                    available[result[neighbor]] = false;\n            }\n            int cr;\n            for (cr = 0; cr < V; cr++) if (available[cr]) break;\n            result[u] = cr;\n            Arrays.fill(available, true);\n        }\n        return result;\n    }\n\n    public static void main(String[] args) {\n        GraphColoring g = new GraphColoring(5);\n        g.addEdge(0,1); g.addEdge(0,2);\n        g.addEdge(1,2); g.addEdge(1,3);\n        g.addEdge(2,4);\n\n        int[] colors = g.greedyColoring();\n        for (int i = 0; i < colors.length; i++)\n            System.out.println(\"Düğüm \" + i + \" → Renk \" + colors[i]);\n    }\n}"
+        },
+        {
+          "label": "C++",
+          "language": "cpp",
+          "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nvector<int> greedyColoring(const vector<vector<int>>& adj) {\n    int V = adj.size();\n    vector<int> result(V, -1);\n    vector<bool> available(V, false);\n\n    result[0] = 0;\n    for (int u = 1; u < V; u++) {\n        for (int v : adj[u]) {\n            if (result[v] != -1)\n                available[result[v]] = true;\n        }\n        int cr;\n        for (cr = 0; cr < V; cr++) if (!available[cr]) break;\n        result[u] = cr;\n        fill(available.begin(), available.end(), false);\n    }\n    return result;\n}\n\nint main() {\n    int V = 5;\n    vector<vector<int>> adj = {{1,2},{0,2,3},{0,1,4},{1},{2}};\n\n    vector<int> colors = greedyColoring(adj);\n    for (int i = 0; i < V; i++)\n        cout << \"Düğüm \" << i << \" → Renk \" << colors[i] << endl;\n    return 0;\n}"
+        }
+      ]
+    },
+    {
+      "simulation_id": 2,
+      "codeTabs": [
+        {
+          "label": "Python",
+          "language": "python",
+          "code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr\n\n\nif __name__ == \"__main__\":\n    data = [64, 34, 25, 12, 22, 11, 90]\n    sorted_data = bubble_sort(data)\n    print(\"Sorted array:\", sorted_data)"
+        },
+        {
+          "label": "Java",
+          "language": "java",
+          "code": "public class BubbleSort {\n    static void bubbleSort(int[] arr) {\n        int n = arr.length;\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n - i - 1; j++) {\n                if (arr[j] > arr[j + 1]) {\n                    int temp = arr[j];\n                    arr[j] = arr[j + 1];\n                    arr[j + 1] = temp;\n                }\n            }\n        }\n    }\n\n    public static void main(String[] args) {\n        int[] data = {64, 34, 25, 12, 22, 11, 90};\n        bubbleSort(data);\n        System.out.print(\"Sorted array: \");\n        for (int num : data) System.out.print(num + \" \");\n    }\n}"
+        },
+        {
+          "label": "C++",
+          "language": "cpp",
+          "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid bubbleSort(vector<int>& arr) {\n    int n = arr.size();\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n - i - 1; j++) {\n            if (arr[j] > arr[j + 1]) {\n                swap(arr[j], arr[j + 1]);\n            }\n        }\n    }\n}\n\nint main() {\n    vector<int> data = {64, 34, 25, 12, 22, 11, 90};\n    bubbleSort(data);\n    cout << \"Sorted array: \";\n    for (int num : data) cout << num << \" \";\n    return 0;\n}"
+        }
+      ]
+    },
+    {
+      "simulation_id": 3,
+      "codeTabs": [
+        {
+          "label": "Python",
+          "language": "python",
+          "code": "from collections import deque\n\ndef bfs(graph, start):\n    visited = set()\n    queue = deque([start])\n    visited.add(start)\n\n    while queue:\n        vertex = queue.popleft()\n        print(vertex, end=\" \")\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n\n\nif __name__ == \"__main__\":\n    graph = {\n        'A': ['B','C'],\n        'B': ['A','D','E'],\n        'C': ['A','F'],\n        'D': ['B'],\n        'E': ['B','F'],\n        'F': ['C','E']\n    }\n    bfs(graph, 'A')"
+        },
+        {
+          "label": "Java",
+          "language": "java",
+          "code": "import java.util.*;\n\npublic class BFS {\n    public static void bfs(Map<String, List<String>> graph, String start) {\n        Set<String> visited = new HashSet<>();\n        Queue<String> queue = new LinkedList<>();\n        visited.add(start);\n        queue.add(start);\n\n        while (!queue.isEmpty()) {\n            String vertex = queue.poll();\n            System.out.print(vertex + \" \");\n            for (String neighbor : graph.get(vertex)) {\n                if (!visited.contains(neighbor)) {\n                    visited.add(neighbor);\n                    queue.add(neighbor);\n                }\n            }\n        }\n    }\n\n    public static void main(String[] args) {\n        Map<String, List<String>> graph = new HashMap<>();\n        graph.put(\"A\", Arrays.asList(\"B\",\"C\"));\n        graph.put(\"B\", Arrays.asList(\"A\",\"D\",\"E\"));\n        graph.put(\"C\", Arrays.asList(\"A\",\"F\"));\n        graph.put(\"D\", Arrays.asList(\"B\"));\n        graph.put(\"E\", Arrays.asList(\"B\",\"F\"));\n        graph.put(\"F\", Arrays.asList(\"C\",\"E\"));\n\n        bfs(graph, \"A\");\n    }\n}"
+        },
+        {
+          "label": "C++",
+          "language": "cpp",
+          "code": "#include <iostream>\n#include <vector>\n#include <queue>\n#include <unordered_set>\nusing namespace std;\n\nvoid bfs(const vector<vector<int>>& graph, int start) {\n    unordered_set<int> visited;\n    queue<int> q;\n    visited.insert(start);\n    q.push(start);\n\n    while (!q.empty()) {\n        int v = q.front(); q.pop();\n        cout << v << \" \";\n        for (int u : graph[v]) {\n            if (!visited.count(u)) {\n                visited.insert(u);\n                q.push(u);\n            }\n        }\n    }\n}\n\nint main() {\n    vector<vector<int>> graph = {\n        {1,2}, {0,3,4}, {0,5}, {1}, {1,5}, {2,4}\n    };\n    bfs(graph, 0);\n    return 0;\n}"
+        }
+      ]
+    },
+    {
+      "simulation_id": 4,
+      "codeTabs": [
+        {
+          "label": "Python",
+          "language": "python",
+          "code": "import heapq\n\ndef dijkstra(graph, start):\n    distances = {vertex: float('infinity') for vertex in graph}\n    distances[start] = 0\n    pq = [(0, start)]\n\n    while pq:\n        current_distance, current_vertex = heapq.heappop(pq)\n        if current_distance > distances[current_vertex]:\n            continue\n        for neighbor, weight in graph[current_vertex].items():\n            distance = current_distance + weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor))\n    return distances\n\nif __name__ == \"__main__\":\n    graph = {\n        'A': {'B': 5, 'C': 1},\n        'B': {'A': 5, 'C': 2, 'D': 1},\n        'C': {'A': 1, 'B': 2, 'D': 4, 'E': 8},\n        'D': {'B': 1, 'C': 4, 'E': 3, 'F': 6},\n        'E': {'C': 8, 'D': 3},\n        'F': {'D': 6}\n    }\n    print(dijkstra(graph, 'A'))"
+        },
+        {
+          "label": "Java",
+          "language": "java",
+          "code": "import java.util.*;\n\npublic class Dijkstra {\n    public static Map<String, Integer> dijkstra(Map<String, Map<String, Integer>> graph, String start) {\n        Map<String, Integer> distances = new HashMap<>();\n        for (String vertex : graph.keySet()) distances.put(vertex, Integer.MAX_VALUE);\n        distances.put(start, 0);\n        PriorityQueue<Map.Entry<String,Integer>> pq = new PriorityQueue<>(\n            Comparator.comparingInt(Map.Entry::getValue)\n        );\n        pq.add(new AbstractMap.SimpleEntry<>(start, 0));\n\n        while (!pq.isEmpty()) {\n            var entry = pq.poll();\n            String u = entry.getKey();\n            int distU = entry.getValue();\n            if (distU > distances.get(u)) continue;\n\n            for (var neighbor : graph.get(u).entrySet()) {\n                String v = neighbor.getKey();\n                int weight = neighbor.getValue();\n                int distanceThroughU = distU + weight;\n                if (distanceThroughU < distances.get(v)) {\n                    distances.put(v, distanceThroughU);\n                    pq.add(new AbstractMap.SimpleEntry<>(v, distanceThroughU));\n                }\n            }\n        }\n        return distances;\n    }\n\n    public static void main(String[] args) {\n        Map<String, Map<String, Integer>> graph = new HashMap<>();\n        graph.put(\"A\", Map.of(\"B\",5, \"C\",1));\n        graph.put(\"B\", Map.of(\"A\",5, \"C\",2, \"D\",1));\n        graph.put(\"C\", Map.of(\"A\",1, \"B\",2, \"D\",4, \"E\",8));\n        graph.put(\"D\", Map.of(\"B\",1, \"C\",4, \"E\",3, \"F\",6));\n        graph.put(\"E\", Map.of(\"C\",8, \"D\",3));\n        graph.put(\"F\", Map.of(\"D\",6));\n\n        System.out.println(dijkstra(graph, \"A\"));\n    }\n}"
+        },
+        {
+          "label": "C++",
+          "language": "cpp",
+          "code": "#include <iostream>\n#include <vector>\n#include <queue>\n#include <unordered_map>\nusing namespace std;\n\nusing Pair = pair<int, int>; // (distance, vertex)\n\nunordered_map<int, int> dijkstra(\n    const unordered_map<int, vector<Pair>>& graph,\n    int start\n) {\n    unordered_map<int, int> dist;\n    for (auto& kv : graph) dist[kv.first] = INT_MAX;\n    dist[start] = 0;\n\n    priority_queue<Pair, vector<Pair>, greater<>> pq;\n    pq.push({0, start});\n\n    while (!pq.empty()) {\n        auto [d, u] = pq.top(); pq.pop();\n        if (d > dist[u]) continue;\n        for (auto& [v, w] : graph.at(u)) {\n            int nd = d + w;\n            if (nd < dist[v]) {\n                dist[v] = nd;\n                pq.push({nd, v});\n            }\n        }\n    }\n    return dist;\n}\n\nint main() {\n    unordered_map<int, vector<Pair>> graph = {\n        {0, {{1,5}, {2,1}}},\n        {1, {{0,5}, {2,2}, {3,1}}},\n        {2, {{0,1}, {1,2}, {3,4}, {4,8}}},\n        {3, {{1,1}, {2,4}, {4,3}, {5,6}}},\n        {4, {{2,8}, {3,3}}},\n        {5, {{3,6}}}\n    };\n\n    auto distances = dijkstra(graph, 0);\n    for (auto& kv : distances) {\n        cout << \"Vertex \" << kv.first << \" -> Distance \" << kv.second << endl;\n    }\n    return 0;\n}"
+        }
+      ]
+    }
+  ]
+}
