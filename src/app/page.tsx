@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Navbar } from "@/components/navbar";
 import { GraphNodesBackground } from "@/components/graph-nodes-background";
 import { GlassHeroCard } from "@/components/glass-hero-card";
