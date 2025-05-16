@@ -39,9 +39,15 @@ export function Navbar() {
       <Button
         asChild
         variant="secondary"
-        className="rounded-full px-6 font-semibold"
+        className="px-6 font-semibold bg-[#0fb9b1]  hover:bg-[#0fb9b1]/80 transition-colors hover:scale-105 hover:text-white transition-all duration-300"
       >
-        <Link href="/simulations">Hemen Keşfet</Link>
+        <Link
+          href="https://forms.gle/UkY7RjEPDndj9WAr6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Teste Katıl
+        </Link>
       </Button>
     </nav>
   );

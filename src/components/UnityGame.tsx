@@ -1,24 +1,54 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function UnityGame() {
-  // Şimdilik sadece Unity logosu gösterilecek
+interface UnityGameProps {
+  simulationPath?: string;
+}
+
+export default function UnityGame({
+  simulationPath = "Pathfinding",
+}: UnityGameProps) {
+  const [isMounted, setIsMounted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const script = document.createElement("script");
+    script.src = `/simulations/${simulationPath}/Build/${simulationPath}.loader.js`;
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, [simulationPath]);
+
+  if (!isMounted) return null;
+
   return (
     <div
+      ref={containerRef}
       style={{
         width: "100%",
         height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "#222",
+        position: "relative",
+        background: "#111",
+        overflow: "hidden",
       }}
     >
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/1/19/Unity_Technologies_logo.svg"
-        alt="Unity Logo"
-        style={{ width: 120, height: 120, opacity: 0.7 }}
+      <iframe
+        src={`/simulations/${simulationPath}/index.html`}
+        style={{
+          width: "100%",
+          height: "100%",
+          border: "none",
+          display: "block",
+          background: "#111",
+        }}
+        allowFullScreen
+        scrolling="no"
       />
     </div>
   );

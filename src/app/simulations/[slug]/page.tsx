@@ -12,6 +12,7 @@ import { useParams } from "next/navigation";
 import codesData from "@/db/codes.json";
 import { DescriptionCard } from "@/components/DescriptionCard";
 import lecturesData from "@/db/lectures.json";
+import Link from "next/link";
 
 // Tip tanımlamaları
 type Section = {
@@ -113,19 +114,22 @@ const Simulation = () => {
           >
             {simulation?.title || "Simulation Title"}
           </motion.h1>
-          <motion.button
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, type: "spring", delay: 0.2 }}
-            onClick={() => setQuizOpen(true)}
-            className="px-5 py-2 rounded-full bg-cyan-700 text-white font-semibold shadow-lg hover:bg-cyan-800 transition text-lg"
-            whileHover={{ scale: 1.08, boxShadow: "0 4px 24px #0fb9b1aa" }}
-            whileTap={{ scale: 0.96 }}
-          >
-            Kendini Dene
-          </motion.button>
+          <div className="flex items-center gap-4">
+            <motion.button
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, type: "spring", delay: 0.2 }}
+              onClick={() => setQuizOpen(true)}
+              className="px-5 py-2 rounded bg-cyan-700 text-white font-semibold shadow-lg hover:bg-cyan-800 transition text-lg"
+              whileHover={{ scale: 1.08, boxShadow: "0 4px 24px #0fb9b1aa" }}
+              whileTap={{ scale: 0.96 }}
+            >
+              Pekiştir!
+            </motion.button>
+          </div>
         </div>
         <QuizModal open={quizOpen} onClose={() => setQuizOpen(false)} />
+
         {/* Unity Simulation Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -138,8 +142,9 @@ const Simulation = () => {
             minHeight: "600px",
           }}
         >
-          <UnityGame />
+          <UnityGame simulationPath={simulation?.path || "pathfinding"} />
         </motion.div>
+
         {/* Main Content */}
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Main Content */}
