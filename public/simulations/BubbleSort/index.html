@@ -38,6 +38,39 @@
         background: #000;
       }
 
+      #unity-loading-bar {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      #unity-loading-text {
+        color: #e2e8f0;
+        font-family: sans-serif;
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+
+      #unity-progress-bar-empty {
+        width: 240px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      #unity-progress-bar-full {
+        width: 0%;
+        height: 100%;
+        background: #3b82f6;
+        transition: width 0.2s ease;
+      }
+
       #unity-fullscreen-button {
         width: 44px;
         height: 44px;
@@ -75,6 +108,12 @@
   <body>
     <div id="unity-container">
       <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-loading-text">Yükleniyor...</div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
       <button id="unity-fullscreen-button" title="Fullscreen">
         <svg viewBox="0 0 24 24">
           <path
@@ -87,6 +126,8 @@
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
 
       var buildUrl = "Build";
@@ -101,13 +142,16 @@
         productVersion: "0.1.0",
       };
 
+      loadingBar.style.display = "flex";
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          // Progress is silently tracked but not shown
+          progressBarFull.style.width = 100 * progress + "%";
         })
           .then((unityInstance) => {
+            loadingBar.style.display = "none";
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
             };
