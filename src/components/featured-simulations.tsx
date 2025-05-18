@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export function FeaturedSimulations({
   data,
@@ -34,11 +35,13 @@ export function FeaturedSimulations({
             onClick={() => router.push(sim.href)}
           >
             <div className="w-full h-56 md:h-64 bg-[#0fb9b1]/10 flex items-center justify-center overflow-hidden">
-              <img
+              <Image
                 src={sim.image}
                 alt={sim.title}
+                width={800}
+                height={600}
                 className="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500"
-                loading="lazy"
+                priority
               />
             </div>
             <div className="flex-1 flex flex-col justify-between p-6 w-full">

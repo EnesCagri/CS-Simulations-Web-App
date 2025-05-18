@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import simulations from "@/db/simulations.json";
 import Link from "next/link";
+import Image from "next/image";
 
 const allSimulations = simulations.simulations;
 const topics = [
@@ -168,11 +169,13 @@ const Simulations = () => {
               <Link href={`/simulations/${sim.id}`}>
                 {/* Görsel ve overlay */}
                 <div className="w-full h-60 md:h-72 bg-[#0fb9b1]/10 flex items-center justify-center overflow-hidden relative">
-                  <img
+                  <Image
                     src={sim.image}
                     alt={sim.title}
+                    width={800}
+                    height={600}
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
+                    priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-all duration-300" />
                   <div className="absolute left-0 top-0 m-4 flex gap-2">

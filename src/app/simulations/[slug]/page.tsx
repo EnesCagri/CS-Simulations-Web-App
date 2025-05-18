@@ -13,6 +13,7 @@ import codesData from "@/db/codes.json";
 import { DescriptionCard } from "@/components/DescriptionCard";
 import lecturesData from "@/db/lectures.json";
 import Link from "next/link";
+import Image from "next/image";
 
 // Tip tanımlamaları
 type Section = {
@@ -172,10 +173,13 @@ const Simulation = () => {
                     key={index}
                     className="bg-cyan-900/40 rounded-xl hover:bg-cyan-900/60 cursor-pointer transition overflow-hidden"
                   >
-                    <img
+                    <Image
                       src={sim.image}
                       alt={sim.title}
+                      width={400}
+                      height={300}
                       className="w-full h-28 object-cover"
+                      priority
                     />
                     <div className="p-3">
                       <h3 className="font-medium text-cyan-100">{sim.title}</h3>
