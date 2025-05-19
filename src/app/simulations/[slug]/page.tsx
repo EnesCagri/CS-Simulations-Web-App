@@ -14,6 +14,7 @@ import { DescriptionCard } from "@/components/DescriptionCard";
 import lecturesData from "@/db/lectures.json";
 import Link from "next/link";
 import Image from "next/image";
+import { SimulationPopup } from "@/components/ui/simulation-popup";
 
 // Tip tanımlamaları
 type Section = {
@@ -77,6 +78,16 @@ const Simulation = () => {
 
   return (
     <div className="min-h-screen w-full bg-blue-900 px-4 py-10 relative overflow-hidden">
+      {/* Popup */}
+      {simulation && (
+        <SimulationPopup
+          title={simulation.title}
+          description={simulation.desc}
+          difficulty={simulation.difficulty}
+          topic={simulation.topic}
+        />
+      )}
+
       {/* Izgara Arkaplanı */}
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <svg

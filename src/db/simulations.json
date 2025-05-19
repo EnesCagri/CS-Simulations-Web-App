@@ -23,7 +23,7 @@
     {
       "id": 2,
       "title": "Linear Search",
-      "desc": "Dizilerde arama algoritmasının temelini öğrenin.",
+      "desc": "En baştan başla, en sona kadar",
       "image": "/images/simulations/linear.png",
       "topic": "Arama",
       "difficulty": "Kolay",
@@ -39,7 +39,7 @@
     {
       "id": 3,
       "title": "Binary Search",
-      "desc": "Sıralı dizilerde hızlı arama algoritmasını keşfedin.",
+      "desc": "Önce diziyi sırala, sonra arama yap!",
       "image": "/images/simulations/binary.png",
       "topic": "Arama",
       "difficulty": "Orta",
@@ -55,7 +55,7 @@
     {
       "id": 4,
       "title": "Graph Coloring",
-      "desc": "Graf üzerindeki düğümleri minimum renkle boyayın.",
+      "desc": "A ile düğüm koy, Sağ klik ile iki düğümü birleştir",
       "image": "/images/simulations/graph.png",
       "topic": "Graf",
       "difficulty": "Orta",
@@ -75,7 +75,7 @@
     {
       "id": 5,
       "title": "Pathfinding",
-      "desc": "En kısa yolu adım adım bulun.",
+      "desc": "Yol ağrılığını seçtikten sonra Q ile döşe, duvar için E tuşuna bas",
       "image": "/images/simulations/pathfinding.png",
       "topic": "Graf",
       "difficulty": "Zor",
