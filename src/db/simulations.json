@@ -56,7 +56,7 @@
       "id": 4,
       "title": "Graph Coloring",
       "desc": "Graf üzerindeki düğümleri minimum renkle boyayın.",
-      "image": "/images/simulations/graphcoloring.png",
+      "image": "/images/simulations/graph.png",
       "topic": "Graf",
       "difficulty": "Orta",
       "path": "GraphColoring",

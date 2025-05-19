@@ -54,7 +54,7 @@ const Simulation = () => {
     { label: "C++", language: "cpp", code: "" },
   ];
 
-  // Real life examples
+  // Gerçek hayat örnekleri
   const realLifeExamples = (simulation?.real_life_examples || []).map(
     (example) => ({
       image: example.image,
@@ -64,7 +64,7 @@ const Simulation = () => {
     })
   );
 
-  // Related simulations
+  // İlgili simülasyonlar
   const relatedSimulations = (simulation?.related_simulations || [])
     .map((id) => allSimulations.find((sim) => sim.id === id))
     .filter((sim): sim is (typeof allSimulations)[0] => !!sim)
@@ -77,7 +77,7 @@ const Simulation = () => {
 
   return (
     <div className="min-h-screen w-full bg-blue-900 px-4 py-10 relative overflow-hidden">
-      {/* Grid Background */}
+      {/* Izgara Arkaplanı */}
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <svg
           width="100%"
@@ -105,7 +105,7 @@ const Simulation = () => {
         </svg>
       </div>
       <div className="relative z-10 mt-16">
-        {/* Header Row: Title & Quiz Button */}
+        {/* Başlık Satırı: Başlık & Quiz Butonu */}
         <div className="max-w-5xl mx-auto flex items-center justify-between gap-4 mb-8">
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -113,7 +113,7 @@ const Simulation = () => {
             transition={{ duration: 0.7, type: "spring" }}
             className="text-4xl font-bold text-cyan-300 drop-shadow"
           >
-            {simulation?.title || "Simulation Title"}
+            {simulation?.title || "Simülasyon Başlığı"}
           </motion.h1>
           <div className="flex items-center gap-4">
             <motion.button
@@ -129,9 +129,13 @@ const Simulation = () => {
             </motion.button>
           </div>
         </div>
-        <QuizModal open={quizOpen} onClose={() => setQuizOpen(false)} />
+        <QuizModal
+          open={quizOpen}
+          onClose={() => setQuizOpen(false)}
+          simulationType={simulation?.path}
+        />
 
-        {/* Unity Simulation Container */}
+        {/* Unity Simülasyon Konteyneri */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -146,26 +150,26 @@ const Simulation = () => {
           <UnityGame simulationPath={simulation?.path || "pathfinding"} />
         </motion.div>
 
-        {/* Main Content */}
+        {/* Ana İçerik */}
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Main Content */}
+          {/* Sol Sütun - Ana İçerik */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Detailed Explanation */}
+            {/* Detaylı Açıklama */}
             {lecture && <DescriptionCard data={lecture} />}
 
-            {/* Code Examples */}
+            {/* Kod Örnekleri */}
             <Card className="p-6 bg-white/10 border border-white/20 rounded-2xl shadow-md text-blue-50">
               <h2 className="text-2xl font-semibold text-cyan-200 mb-4">
-                Code Examples
+                Kod Örnekleri
               </h2>
               <CodeTabs tabs={codeTabsData} />
             </Card>
           </div>
-          {/* Right Column - Related Simulations */}
+          {/* Sağ Sütun - İlgili Simülasyonlar */}
           <div className="space-y-6">
             <Card className="p-6 bg-white/10 border border-white/20 rounded-2xl shadow-md text-blue-50">
               <h2 className="text-2xl font-semibold text-cyan-200 mb-4">
-                Related Simulations
+                İlgili Simülasyonlar
               </h2>
               <ul className="space-y-4">
                 {relatedSimulations.map((sim, index) => (
@@ -190,10 +194,10 @@ const Simulation = () => {
               </ul>
             </Card>
 
-            {/* Real Life Examples */}
+            {/* Gerçek Hayat Örnekleri */}
             <Card className="p-6 bg-white/10 border border-white/20 rounded-2xl shadow-md text-blue-50">
               <h2 className="text-2xl font-semibold text-cyan-200 mb-4">
-                Real Life Examples
+                Gerçek Hayat Örnekleri
               </h2>
               <RealLifeExamplesGrid data={realLifeExamples} />
             </Card>

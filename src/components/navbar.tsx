@@ -42,7 +42,7 @@ export function Navbar() {
         className="px-6 font-semibold bg-[#0fb9b1]  hover:bg-[#0fb9b1]/80 transition-colors hover:scale-105 hover:text-white transition-all duration-300"
       >
         <Link
-          href="https://forms.gle/UkY7RjEPDndj9WAr6"
+          href="https://forms.gle/YDSzKVSvNJLrTzHS7"
           target="_blank"
           rel="noopener noreferrer"
         >
