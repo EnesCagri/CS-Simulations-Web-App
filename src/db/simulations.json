@@ -12,7 +12,7 @@
       "real_life_examples": [
         {
           "example": "Oyun kağıtlarını ya da kartları el ile sıralamak",
-          "image": "/images/real_life/sortcards.jpeg"
+          "image": "/images/real_life/sortcard.jpeg"
         },
         {
           "example": "Basit skor listesi güncellemeleri",
@@ -32,7 +32,7 @@
       "real_life_examples": [
         {
           "example": "Bir listede belirli bir ismi bulmak",
-          "image": "/images/real_life/listsearch.jpeg"
+          "image": "/images/real_life/kisayol.jpeg"
         }
       ]
     },

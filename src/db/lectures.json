@@ -1,6 +1,6 @@
 [
   {
-    "simulation_id": 1,
+    "simulation_id": 4,
     "title": "Graf Boyama: Detaylı Açıklama",
     "sections": [
       {
@@ -49,7 +49,7 @@
     ]
   },
   {
-    "simulation_id": 2,
+    "simulation_id": 1,
     "title": "Bubble Sort: Detaylı Açıklama",
     "sections": [
       {
@@ -69,7 +69,7 @@
         "heading": "3. Algoritma Adımları",
         "paragraphs": [
           "n elemanlı dizide i turunda son i eleman zaten sıralı kabul edilir.",
-          "j = 0’dan n-i-2’ye kadar her bitişik çift karşılaştırılır ve gerekirse yer değiştirilir."
+          "j = 0'dan n-i-2'ye kadar her bitişik çift karşılaştırılır ve gerekirse yer değiştirilir."
         ]
       },
       {
@@ -96,88 +96,150 @@
     ]
   },
   {
-    "simulation_id": 3,
-    "title": "BFS Algoritması: Detaylı Açıklama",
+    "simulation_id": 2,
+    "title": "Linear Search: Detaylı Açıklama",
     "sections": [
       {
         "heading": "1. Giriş",
         "paragraphs": [
-          "Breadth-First Search (Genişlik Öncelikli Arama), bir graf üzerinde katman katman ilerleyerek önce en yakın düğümleri keşfeden gezme algoritmasıdır."
+          "Linear Search (Doğrusal Arama), bir dizideki elemanları sırayla kontrol ederek aranan değeri bulmaya çalışan basit bir arama algoritmasıdır."
         ]
       },
       {
         "heading": "2. Temel Kavramlar",
         "paragraphs": [
-          "Graf (G = V, E): V düğümler, E kenarlar kümesi.",
-          "Kuyruk (Queue): FIFO yapısı; keşif sırasını tutar."
-        ]
-      },
-      {
-        "heading": "3. Çalışma Prensibi",
-        "paragraphs": [
-          "Başlangıç düğümünü kuyruğa ekle ve işaretle.",
-          "Kuyruğun önünden çıkart, komşularını işaretle ve kuyruğa ekle.",
-          "Kuyruk boşalana dek devam et."
-        ]
-      },
-      {
-        "heading": "4. Zaman Karmaşıklığı",
-        "paragraphs": [
-          "O(V + E) — Tüm düğümler ve kenarlar en fazla bir kez işlenir."
-        ]
-      },
-      {
-        "heading": "5. Uygulama Alanları",
-        "list": ["Sosyal ağ dolaşımı", "Katmanlı harita en kısa yol bulma"]
-      },
-      {
-        "heading": "6. Örnek Adım Adım",
-        "paragraphs": [
-          "Graf: A→B,C; B→A,D,E; C→A,F; D→B; E→B,F; F→C,E. BFS(A) → A → B,C → D,E → F"
-        ]
-      }
-    ]
-  },
-  {
-    "simulation_id": 4,
-    "title": "Dijkstra Algoritması: Detaylı Açıklama",
-    "sections": [
-      {
-        "heading": "1. Giriş",
-        "paragraphs": [
-          "Dijkstra, ağırlıklı graf üzerinde bir başlangıç düğümünden tüm diğer düğümlere en kısa mesafeyi hesaplayan öncelikli kuyruk temelli algoritmadır."
-        ]
-      },
-      {
-        "heading": "2. Temel Kavramlar",
-        "paragraphs": [
-          "Ağırlıklı Graf: Kenarların pozitif ağırlıkları vardır.",
-          "Min-Heap (Öncelikli Kuyruk): En küçük mesafeyi hızlı seçer."
+          "Dizi (Array): Sıralı veri koleksiyonu.",
+          "İndeks (Index): Dizideki elemanların konumunu belirten sayı."
         ]
       },
       {
         "heading": "3. Algoritma Adımları",
         "paragraphs": [
-          "Tüm mesafeleri ∞ olarak başlat, start = 0.",
-          "Öncelikli kuyruğa (0, start) ekle.",
-          "Kuyruktan en küçük uzaklıklı düğümü al, komşuları güncelle ve kuyruğa ekle.",
-          "Kuyruk boşalana dek sürdür."
+          "Dizinin başından başla.",
+          "Her elemanı aranan değerle karşılaştır.",
+          "Eşleşme bulunursa indeksi döndür.",
+          "Dizinin sonuna kadar devam et."
         ]
       },
       {
         "heading": "4. Zaman Karmaşıklığı",
         "paragraphs": [
-          "O((V + E) log V) — Öncelikli kuyruk işlemleri dominanttır."
+          "En Kötü Durum: O(n)",
+          "En İyi Durum: O(1)",
+          "Ortalama Durum: O(n)"
         ]
       },
       {
         "heading": "5. Uygulama Alanları",
-        "list": ["GPS rota planlama", "Ağ yönlendirme protokolleri"]
+        "list": [
+          "Küçük veri setlerinde arama",
+          "Sıralanmamış dizilerde arama",
+          "Basit veri yapılarında arama"
+        ]
       },
       {
         "heading": "6. Örnek Adım Adım",
         "paragraphs": [
-          "Graf: A–5→B, A–1→C, B–1→D. Başlangıç mesafeleri {A:0, B:∞, C:∞, D:∞}. Güncellemeler C=1, B=5, D=6 → Sonuç: {A:0, B:5, C:1, D:6}"
+          "Dizi = [5, 3, 7, 1, 9], Aranan = 1. Adımlar: 5≠1, 3≠1, 7≠1, 1=1 → Bulundu, indeks = 3"
+        ]
+      }
+    ]
+  },
+  {
+    "simulation_id": 3,
+    "title": "Binary Search: Detaylı Açıklama",
+    "sections": [
+      {
+        "heading": "1. Giriş",
+        "paragraphs": [
+          "Binary Search (İkili Arama), sıralı bir dizide arama yaparken her adımda arama alanını yarıya indiren verimli bir algoritmadır."
+        ]
+      },
+      {
+        "heading": "2. Temel Kavramlar",
+        "paragraphs": [
+          "Sıralı Dizi: Elemanları belirli bir sırada olan dizi.",
+          "Orta Nokta: Arama alanının ortasındaki eleman."
+        ]
+      },
+      {
+        "heading": "3. Algoritma Adımları",
+        "paragraphs": [
+          "Dizinin ortasındaki elemanı kontrol et.",
+          "Aranan değer ortadaki elemandan küçükse sol yarıda ara.",
+          "Aranan değer ortadaki elemandan büyükse sağ yarıda ara.",
+          "Eşleşme bulunana veya arama alanı boşalana kadar devam et."
+        ]
+      },
+      {
+        "heading": "4. Zaman Karmaşıklığı",
+        "paragraphs": [
+          "En Kötü Durum: O(log n)",
+          "En İyi Durum: O(1)",
+          "Ortalama Durum: O(log n)"
+        ]
+      },
+      {
+        "heading": "5. Uygulama Alanları",
+        "list": [
+          "Sıralı dizilerde hızlı arama",
+          "Veritabanı indeksleme",
+          "Sözlük ve telefon rehberi aramaları"
+        ]
+      },
+      {
+        "heading": "6. Örnek Adım Adım",
+        "paragraphs": [
+          "Dizi = [1, 3, 5, 7, 9], Aranan = 7. Adımlar: Ortadaki 5<7, sağ yarıda ara; Ortadaki 7=7 → Bulundu, indeks = 3"
+        ]
+      }
+    ]
+  },
+  {
+    "simulation_id": 5,
+    "title": "Pathfinding: Detaylı Açıklama",
+    "sections": [
+      {
+        "heading": "1. Giriş",
+        "paragraphs": [
+          "Pathfinding (Yol Bulma), bir graf üzerinde iki nokta arasındaki en kısa veya en uygun yolu bulmayı amaçlayan algoritmalar bütünüdür."
+        ]
+      },
+      {
+        "heading": "2. Temel Kavramlar",
+        "paragraphs": [
+          "Graf: Düğümler ve kenarlardan oluşan veri yapısı.",
+          "Ağırlık: Kenarların maliyetini belirten değer."
+        ]
+      },
+      {
+        "heading": "3. Yaygın Algoritmalar",
+        "paragraphs": [
+          "Dijkstra: En kısa yol algoritması, tüm kenarların pozitif ağırlıklı olduğu durumlar için.",
+          "A*: Sezgisel arama algoritması, hedef yönünde tahmin yaparak aramayı hızlandırır.",
+          "BFS: Ağırlıksız graflarda en kısa yol için kullanılır."
+        ]
+      },
+      {
+        "heading": "4. Zaman Karmaşıklığı",
+        "paragraphs": [
+          "Dijkstra: O((V + E) log V)",
+          "A*: O(b^d), b: dallanma faktörü, d: derinlik",
+          "BFS: O(V + E)"
+        ]
+      },
+      {
+        "heading": "5. Uygulama Alanları",
+        "list": [
+          "GPS navigasyon sistemleri",
+          "Oyun AI'ları",
+          "Ağ yönlendirme protokolleri"
+        ]
+      },
+      {
+        "heading": "6. Örnek Adım Adım",
+        "paragraphs": [
+          "Graf: A–5→B, A–1→C, B–1→D. Dijkstra(A) → A(0) → C(1) → B(5) → D(6) → En kısa yol: A→C→B→D"
         ]
       }
     ]
