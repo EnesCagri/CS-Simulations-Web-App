@@ -7,11 +7,11 @@ export function Footer() {
         </div>
         <div className="text-white/80 text-sm">info@cssim.com</div>
         <div className="text-white/60 text-sm">
-          İstanbul Medeniyet Üniversitesi
+          Istanbul Medeniyet University
         </div>
       </div>
       <div className="text-center text-xs text-white/40 mt-4">
-        © {new Date().getFullYear()} CS Sim. Tüm hakları saklıdır.
+        © {new Date().getFullYear()} CS Sim. All rights reserved.
       </div>
     </footer>
   );

@@ -16,7 +16,7 @@ export function FeaturedSimulations({
   return (
     <section className="relative z-10 w-full flex flex-col items-center py-20">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-        Öne Çıkan Simülasyonlar
+        Featured Simulations
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl">
         {data.slice(0, 3).map((sim, i) => (
@@ -55,7 +55,7 @@ export function FeaturedSimulations({
                 asChild
                 className="rounded-xl bg-[#0fb9b1] hover:bg-[#0fb9b1]/90 font-semibold px-8 py-3 text-lg shadow-lg shadow-[#0fb9b1]/20 group-hover:scale-105 group-hover:shadow-[#0fb9b1]/40 transition-all duration-300"
               >
-                <Link href={sim.href}>Simülasyonu Aç</Link>
+                <Link href={sim.href}>Open Simulation</Link>
               </Button>
             </div>
           </motion.div>

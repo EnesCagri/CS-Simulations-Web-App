@@ -10,7 +10,6 @@ import { Footer } from "@/components/footer";
 import simulationsData from "@/db/simulations.json";
 
 export default function Home() {
-  // Map simulations to the required format for FeaturedSimulations
   const featuredData = simulationsData.simulations.map((sim) => ({
     title: sim.title,
     desc: sim.desc,

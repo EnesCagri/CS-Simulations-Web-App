@@ -16,7 +16,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SimulationPopup } from "@/components/ui/simulation-popup";
 
-// Tip tanımlamaları
+// Type definitions
 type Section = {
   heading: string;
   paragraphs?: string[];
@@ -34,17 +34,17 @@ const Simulation = () => {
   const { slug } = useParams();
   const allSimulations = simulationsData.simulations;
 
-  // Simülasyonu bul (örneğin id ile)
+  // Find simulation (e.g., by id)
   const simulation = allSimulations.find(
     (sim) => String(sim.id) === String(slug)
   );
 
-  // Açıklamayı bul
+  // Find lecture
   const lecture = (lecturesData as unknown as Lecture[]).find(
     (lec) => lec.simulation_id === simulation?.id
   );
 
-  // Kodları bul
+  // Find codes
   const codeEntry = codesData.codes.find(
     (code) => code.simulation_id === simulation?.id
   );
@@ -55,17 +55,17 @@ const Simulation = () => {
     { label: "C++", language: "cpp", code: "" },
   ];
 
-  // Gerçek hayat örnekleri
+  // Real-life examples
   const realLifeExamples = (simulation?.real_life_examples || []).map(
     (example) => ({
       image: example.image,
       title: example.example,
       desc: example.example,
-      badge: "Gerçek Hayat",
+      badge: "Real Life",
     })
   );
 
-  // İlgili simülasyonlar
+  // Related simulations
   const relatedSimulations = (simulation?.related_simulations || [])
     .map((id) => allSimulations.find((sim) => sim.id === id))
     .filter((sim): sim is (typeof allSimulations)[0] => !!sim)
@@ -88,7 +88,7 @@ const Simulation = () => {
         />
       )}
 
-      {/* Izgara Arkaplanı */}
+      {/* Grid Background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <svg
           width="100%"
@@ -116,7 +116,7 @@ const Simulation = () => {
         </svg>
       </div>
       <div className="relative z-10 mt-16">
-        {/* Başlık Satırı: Başlık & Quiz Butonu */}
+        {/* Title Row: Title & Quiz Button */}
         <div className="max-w-5xl mx-auto flex items-center justify-between gap-4 mb-8">
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -124,7 +124,7 @@ const Simulation = () => {
             transition={{ duration: 0.7, type: "spring" }}
             className="text-4xl font-bold text-cyan-300 drop-shadow"
           >
-            {simulation?.title || "Simülasyon Başlığı"}
+            {simulation?.title || "Simulation Title"}
           </motion.h1>
           <div className="flex items-center gap-4">
             <motion.button
@@ -136,7 +136,7 @@ const Simulation = () => {
               whileHover={{ scale: 1.08, boxShadow: "0 4px 24px #0fb9b1aa" }}
               whileTap={{ scale: 0.96 }}
             >
-              Pekiştir!
+              Practice!
             </motion.button>
           </div>
         </div>
@@ -146,7 +146,7 @@ const Simulation = () => {
           simulationType={simulation?.path}
         />
 
-        {/* Unity Simülasyon Konteyneri */}
+        {/* Unity Simulation Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -161,26 +161,26 @@ const Simulation = () => {
           <UnityGame simulationPath={simulation?.path || "pathfinding"} />
         </motion.div>
 
-        {/* Ana İçerik */}
+        {/* Main Content */}
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Sol Sütun - Ana İçerik */}
+          {/* Left Column - Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Detaylı Açıklama */}
+            {/* Detailed Description */}
             {lecture && <DescriptionCard data={lecture} />}
 
-            {/* Kod Örnekleri */}
+            {/* Code Examples */}
             <Card className="p-6 bg-white/10 border border-white/20 rounded-2xl shadow-md text-blue-50">
               <h2 className="text-2xl font-semibold text-cyan-200 mb-4">
-                Kod Örnekleri
+                Code Examples
               </h2>
               <CodeTabs tabs={codeTabsData} />
             </Card>
           </div>
-          {/* Sağ Sütun - İlgili Simülasyonlar */}
+          {/* Right Column - Related Simulations */}
           <div className="space-y-6">
             <Card className="p-6 bg-white/10 border border-white/20 rounded-2xl shadow-md text-blue-50">
               <h2 className="text-2xl font-semibold text-cyan-200 mb-4">
-                İlgili Simülasyonlar
+                Related Simulations
               </h2>
               <ul className="space-y-4">
                 {relatedSimulations.map((sim, index) => (
@@ -205,10 +205,10 @@ const Simulation = () => {
               </ul>
             </Card>
 
-            {/* Gerçek Hayat Örnekleri */}
+            {/* Real-Life Examples */}
             <Card className="p-6 bg-white/10 border border-white/20 rounded-2xl shadow-md text-blue-50">
               <h2 className="text-2xl font-semibold text-cyan-200 mb-4">
-                Gerçek Hayat Örnekleri
+                Real-Life Examples
               </h2>
               <RealLifeExamplesGrid data={realLifeExamples} />
             </Card>

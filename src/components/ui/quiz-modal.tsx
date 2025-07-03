@@ -20,193 +20,199 @@ type Questions = {
 };
 
 const questions: Questions = {
-  // Bubble Sort için sorular
+  // Questions for Bubble Sort
   bubbleSort: [
     {
       question:
-        "Bubblesort algoritmasında, bir elemanın yerini değiştirmesi için ne olmalıdır?",
+        "In the Bubble Sort algorithm, what must happen for an element to swap positions?",
       options: [
-        "En küçük eleman olmalı",
-        "Sağındaki elemandan büyük olmalı",
-        "En büyük eleman olmalı",
-        "Solundaki elemandan büyük olmalı",
+        "It must be the smallest element",
+        "It must be larger than the element to its right",
+        "It must be the largest element",
+        "It must be larger than the element to its left",
       ],
       answer: 1,
       explanation:
-        "Bubblesort'ta bir eleman, sağındaki elemandan büyükse yer değiştirir. Bu sayede büyük elemanlar sağa doğru 'kabarcık' gibi yükselir.",
+        "In Bubble Sort, an element swaps if it's larger than the element to its right. This causes larger elements to 'bubble up' to the right.",
     },
     {
       question:
-        "Bubblesort algoritmasında, her turda en büyük eleman nereye gider?",
+        "In the Bubble Sort algorithm, where does the largest element go in each pass?",
       options: [
-        "Rastgele bir yere",
-        "Listenin ortasına",
-        "Listenin sonuna",
-        "Listenin başına",
+        "To a random position",
+        "To the middle of the list",
+        "To the end of the list",
+        "To the beginning of the list",
       ],
       answer: 2,
       explanation:
-        "Her turda en büyük eleman listenin sonuna gider. Bu, algoritmanın temel mantığıdır - her turda bir eleman doğru yerine yerleşir.",
+        "In each pass, the largest element goes to the end of the list. This is the fundamental logic of the algorithm - one element gets placed in its correct position each pass.",
     },
     {
-      question: "Bubblesort algoritmasında, liste sıralandığında ne olur?",
+      question:
+        "In the Bubble Sort algorithm, what happens when the list is sorted?",
       options: [
-        "Elemanlar tekrar sıralanır",
-        "Elemanlar rastgele dağılır",
-        "Elemanlar karışır",
-        "Hiçbir eleman yer değiştirmez",
+        "Elements are sorted again",
+        "Elements are randomly distributed",
+        "Elements get mixed up",
+        "No elements swap positions",
       ],
       answer: 3,
       explanation:
-        "Liste sıralandığında, hiçbir eleman yer değiştirmez çünkü tüm elemanlar zaten doğru sıradadır.",
+        "When the list is sorted, no elements swap positions because all elements are already in the correct order.",
     },
   ],
 
-  // Linear Search için sorular
+  // Questions for Linear Search
   linearSearch: [
     {
       question:
-        "Linear Search algoritmasında, aranan eleman bulunduğunda ne olur?",
+        "In the Linear Search algorithm, what happens when the target element is found?",
       options: [
-        "Liste sıralanır",
-        "Liste karışır",
-        "Arama durur",
-        "Arama devam eder",
+        "The list gets sorted",
+        "The list gets mixed up",
+        "The search stops",
+        "The search continues",
       ],
       answer: 2,
       explanation:
-        "Linear Search'ta aranan eleman bulunduğunda arama durur çünkü amaca ulaşılmıştır. Tüm listeyi kontrol etmeye gerek kalmaz.",
+        "In Linear Search, when the target element is found, the search stops because the goal has been reached. There's no need to check the entire list.",
     },
     {
       question:
-        "Linear Search algoritmasında, eleman bulunamazsa ne döndürülür?",
-      options: ["Liste uzunluğu", "-1", "1", "0"],
+        "In the Linear Search algorithm, what is returned if the element is not found?",
+      options: ["List length", "-1", "1", "0"],
       answer: 1,
       explanation:
-        "Eleman bulunamazsa -1 döndürülür. Bu, elemanın listede olmadığını belirtmek için kullanılan yaygın bir konvansiyondur.",
+        "If the element is not found, -1 is returned. This is a common convention used to indicate that the element is not in the list.",
     },
     {
-      question: "Linear Search algoritması, elemanları nasıl kontrol eder?",
-      options: ["Ortadan", "Tersten", "Sırayla", "Rastgele"],
+      question: "How does the Linear Search algorithm check elements?",
+      options: ["From the middle", "In reverse", "Sequentially", "Randomly"],
       answer: 2,
       explanation:
-        "Linear Search algoritması elemanları sırayla kontrol eder. Her elemanı tek tek kontrol ederek ilerler.",
+        "The Linear Search algorithm checks elements sequentially. It progresses by checking each element one by one.",
     },
   ],
 
-  // Binary Search için sorular
+  // Questions for Binary Search
   binarySearch: [
     {
-      question: "Binary Search algoritması hangi tür listelerde çalışır?",
+      question:
+        "What type of lists does the Binary Search algorithm work with?",
       options: [
-        "Tekrarlı listelerde",
-        "Boş listelerde",
-        "Karışık listelerde",
-        "Sıralı listelerde",
+        "Lists with duplicates",
+        "Empty lists",
+        "Unsorted lists",
+        "Sorted lists",
       ],
       answer: 3,
       explanation:
-        "Binary Search sadece sıralı listelerde çalışır çünkü listeyi ortadan bölerek arama yapabilmek için sıralı olması gerekir.",
-    },
-    {
-      question: "Binary Search algoritması her adımda listeyi nasıl böler?",
-      options: ["Beşe", "Dörde", "İkiye", "Üçe"],
-      answer: 2,
-      explanation:
-        "Binary Search her adımda listeyi ikiye böler. Bu sayede arama alanını hızlıca küçültür.",
+        "Binary Search only works with sorted lists because it needs the list to be sorted to divide it in half for searching.",
     },
     {
       question:
-        "Binary Search algoritması, doğrusal aramaya göre neden daha hızlıdır?",
+        "How does the Binary Search algorithm divide the list in each step?",
+      options: ["Into five", "Into four", "Into two", "Into three"],
+      answer: 2,
+      explanation:
+        "Binary Search divides the list into two in each step. This allows it to quickly reduce the search space.",
+    },
+    {
+      question: "Why is the Binary Search algorithm faster than linear search?",
       options: [
-        "Aynı hızda çalışır",
-        "Daha yavaş çalışır",
-        "Daha çok karşılaştırma yapar",
-        "Daha az karşılaştırma yapar",
+        "It works at the same speed",
+        "It works slower",
+        "It makes more comparisons",
+        "It makes fewer comparisons",
       ],
       answer: 3,
       explanation:
-        "Binary Search daha az karşılaştırma yapar çünkü her adımda arama alanını yarıya indirir. Bu sayede çok daha hızlı sonuca ulaşır.",
+        "Binary Search makes fewer comparisons because it halves the search space in each step. This allows it to reach the result much faster.",
     },
   ],
 
-  // Graph Coloring için sorular
+  // Questions for Graph Coloring
   graphColoring: [
     {
       question:
-        "Graf boyama algoritmasında, komşu düğümler nasıl boyanmalıdır?",
+        "In the Graph Coloring algorithm, how should adjacent nodes be colored?",
       options: [
-        "Sadece siyah-beyaz",
-        "Rastgele renklerle",
-        "Farklı renklerle",
-        "Aynı renkle",
+        "Only black and white",
+        "With random colors",
+        "With different colors",
+        "With the same color",
       ],
       answer: 2,
       explanation:
-        "Komşu düğümler farklı renklerle boyanmalıdır. Bu, graf boyama probleminin temel kuralıdır.",
+        "Adjacent nodes should be colored with different colors. This is the fundamental rule of the graph coloring problem.",
     },
     {
       question:
-        "Bir düğümün komşu sayısı arttıkça, gerekli renk sayısı nasıl değişir?",
-      options: ["Önce artar sonra azalır", "Değişmez", "Artar", "Azalır"],
+        "As the number of neighbors of a node increases, how does the required number of colors change?",
+      options: [
+        "First increases then decreases",
+        "Doesn't change",
+        "Increases",
+        "Decreases",
+      ],
       answer: 2,
       explanation:
-        "Bir düğümün komşu sayısı arttıkça, gerekli renk sayısı da artar çünkü her komşu için farklı bir renk gerekebilir.",
+        "As the number of neighbors of a node increases, the required number of colors also increases because a different color may be needed for each neighbor.",
     },
     {
       question:
-        "Graf boyama algoritmasında, bir düğüm için renk seçerken neye bakılır?",
+        "In the Graph Coloring algorithm, what is looked at when choosing a color for a node?",
       options: [
-        "Grafın şekline",
-        "Grafın boyutuna",
-        "Sadece düğümün kendisine",
-        "Komşu düğümlerin renklerine",
+        "The shape of the graph",
+        "The size of the graph",
+        "Only the node itself",
+        "The colors of neighboring nodes",
       ],
       answer: 3,
       explanation:
-        "Bir düğüm için renk seçerken komşu düğümlerin renklerine bakılır. Bu sayede komşu düğümlerle aynı renk kullanılmaz.",
+        "When choosing a color for a node, the colors of neighboring nodes are looked at. This ensures that the same color is not used as neighboring nodes.",
     },
   ],
 
-  // Pathfinding için sorular
+  // Questions for Pathfinding
   pathfinding: [
     {
       question:
-        "DFS (Depth First Search) algoritmasında düğümleri ziyaret etme sırası nasıldır?",
+        "In the DFS (Depth First Search) algorithm, what is the order of visiting nodes?",
       options: [
-        "En yakın düğümden başlar",
-        "Rastgele düğümlerden ilerler",
-        "Mümkün olduğunca derine iner",
-        "Seviye seviye ilerler",
+        "Starts from the nearest node",
+        "Progresses from random nodes",
+        "Goes as deep as possible",
+        "Progresses level by level",
       ],
       answer: 2,
       explanation:
-        "DFS algoritması mümkün olduğunca derine iner. Bir yolda ilerlerken, o yolun sonuna kadar gider ve sonra geri döner.",
+        "The DFS algorithm goes as deep as possible. It follows one path to its end and then backtracks.",
     },
     {
-      question: "BFS (Breadth First Search) algoritması nasıl çalışır?",
+      question: "How does the BFS (Breadth First Search) algorithm work?",
       options: [
-        "Seviye seviye ilerler",
-        "Derinlemesine iner",
-        "Rastgele hareket eder",
-        "yol zorluğunu hesaplayarak ilerler",
+        "Progresses level by level",
+        "Goes deep",
+        "Moves randomly",
+        "Calculates path difficulty and progresses",
       ],
       answer: 0,
       explanation:
-        "BFS algoritması seviye seviye ilerler. Önce başlangıç düğümünün tüm komşularını ziyaret eder, sonra onların komşularını ve bu şekilde devam eder.",
+        "The BFS algorithm progresses level by level. It first visits all neighbors of the starting node, then their neighbors, and continues this way.",
     },
     {
-      question:
-        "Dijkstra algoritması aşağıdakilerden hangisini bulmak için kullanılır?",
+      question: "What does the Dijkstra algorithm find?",
       options: [
-        "Minimum kapsayan ağaç",
-        "Tüm düğümlere en kısa yol",
-        "En uzun yol",
-        "Çevrim",
+        "Minimum spanning tree",
+        "Shortest paths to all nodes",
+        "Longest path",
+        "Cycle",
       ],
       answer: 1,
       explanation:
-        "Dijkstra algoritması, başlangıç düğümünden diğer tüm düğümlere olan en kısa yolları bulmak için kullanılır.",
+        "The Dijkstra algorithm is used to find the shortest paths from the starting node to all other nodes.",
     },
   ],
 };
@@ -302,7 +308,7 @@ export const QuizModal = ({
                   as="h3"
                   className="text-2xl font-bold leading-6 text-cyan-300 mb-6"
                 >
-                  {showResults ? "Quiz Sonuçları" : "Quiz"}
+                  {showResults ? "Quiz Results" : "Quiz"}
                 </Dialog.Title>
 
                 <AnimatePresence mode="wait">
@@ -357,8 +363,8 @@ export const QuizModal = ({
                             <p className="text-white font-medium">
                               {selectedAnswer ===
                               currentQuestions[currentQuestion].answer
-                                ? "Doğru!"
-                                : "Yanlış!"}
+                                ? "Correct!"
+                                : "Incorrect!"}
                             </p>
                             <p className="text-white/80 mt-2">
                               {currentQuestions[currentQuestion].explanation}
@@ -369,8 +375,8 @@ export const QuizModal = ({
                             className="w-full py-3 px-6 rounded-xl bg-cyan-600 text-white font-semibold hover:bg-cyan-700 transition-colors"
                           >
                             {currentQuestion < currentQuestions.length - 1
-                              ? "Sonraki Soru"
-                              : "Sonuçları Gör"}
+                              ? "Next Question"
+                              : "See Results"}
                           </motion.button>
                         </motion.div>
                       )}
@@ -387,16 +393,16 @@ export const QuizModal = ({
                       </div>
                       <div className="text-white">
                         {score === currentQuestions.length
-                          ? "Mükemmel! Tüm soruları doğru bildiniz!"
+                          ? "Perfect! You got all questions correct!"
                           : score >= currentQuestions.length / 2
-                          ? "İyi iş! Çoğu soruyu doğru bildiniz."
-                          : "Daha fazla pratik yapmalısınız."}
+                          ? "Good job! You got most questions correct."
+                          : "You need more practice."}
                       </div>
                       <button
                         onClick={handleRestart}
                         className="px-6 py-3 rounded-xl bg-cyan-600 text-white font-semibold hover:bg-cyan-700 transition-colors"
                       >
-                        Tekrar Dene
+                        Try Again
                       </button>
                     </motion.div>
                   )}

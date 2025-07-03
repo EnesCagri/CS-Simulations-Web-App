@@ -1,245 +1,245 @@
 [
   {
     "simulation_id": 4,
-    "title": "Graf Boyama: Detaylı Açıklama",
+    "title": "Graph Coloring: Detailed Explanation",
     "sections": [
       {
-        "heading": "1. Giriş",
+        "heading": "1. Introduction",
         "paragraphs": [
-          "Graf boyama, bir grafın düğümlerine (veya kenarlarına) renkler atayarak belirli kısıtları sağlamayı amaçlayan bir kombinatoryal optimizasyon problemidir. En yaygın versiyonu, komşu düğümlere aynı rengin atanmasını engelleyen \"proper\" boyamadır."
+          "Graph coloring is a combinatorial optimization problem that aims to assign colors to the nodes (or edges) of a graph while satisfying certain constraints. The most common version is 'proper' coloring, which prevents adjacent nodes from being assigned the same color."
         ]
       },
       {
-        "heading": "2. Temel Kavramlar",
+        "heading": "2. Basic Concepts",
         "paragraphs": [
-          "Graf (G): G = (V, E) biçiminde gösterilir. V düğümler kümesi, E ise kenarlar kümesidir.",
-          "Proper Boyama: Hiçbir komşu düğüm çifti aynı rengi paylaşmaz. Kromatik Sayı (χ(G)): Bir grafı proper boyamak için gereken en az renk sayısı."
+          "Graph (G): Represented as G = (V, E). V is the set of nodes, E is the set of edges.",
+          "Proper Coloring: No adjacent node pair shares the same color. Chromatic Number (χ(G)): The minimum number of colors required to properly color a graph."
         ]
       },
       {
-        "heading": "3. Yaygın Algoritmalar",
+        "heading": "3. Common Algorithms",
         "paragraphs": [
-          "Greedy (Açgözlü): Düğümleri sıralayıp her düğüme mevcut en küçük uygun rengi atar. Özellik: Hızlı ama sıralamaya duyarlı.",
-          "Welsh–Powell: Düğümleri azalan dereceye göre sıralar, sonra Greedy uygular. Özellik: Genelde daha az renk kullanır.",
-          "DSATUR: Önceliği, çevresinde en çok farklı renkli komşusu olan düğüme verir. Pratikte çok başarılıdır."
+          "Greedy: Orders nodes and assigns the smallest available color to each node. Feature: Fast but sensitive to ordering.",
+          "Welsh–Powell: Orders nodes by decreasing degree, then applies Greedy. Feature: Generally uses fewer colors.",
+          "DSATUR: Gives priority to the node with the most differently colored neighbors. Very successful in practice."
         ]
       },
       {
-        "heading": "4. Karmaşıklık ve Teoremler",
+        "heading": "4. Complexity and Theorems",
         "paragraphs": [
-          "Graf boyama genel olarak NP-tamdır; χ(G)'yi bulmak veya k renkle boyanabilirliği test etmek NP-zor problemler arasındadır.",
-          "Dört Renk Teoremi: Her düzlemsel graf en fazla 4 renkle boyanabilir.",
-          "Brooks Teoremi: Bağlantılı graflar için χ(G) ≤ Δ(G), tam graflar ve tekil kenar grafı hariç."
+          "Graph coloring is generally NP-complete; finding χ(G) or testing k-colorability are among NP-hard problems.",
+          "Four Color Theorem: Every planar graph can be colored with at most 4 colors.",
+          "Brooks' Theorem: For connected graphs, χ(G) ≤ Δ(G), except for complete graphs and odd cycles."
         ]
       },
       {
-        "heading": "5. Uygulama Alanları",
+        "heading": "5. Application Areas",
         "list": [
-          "Harita Boyama (komşu bölgeler)",
-          "Register Allocation (derleyici optimizasyonu)",
-          "Zaman Çizelgeleme, Frekans Ataması vb."
+          "Map Coloring (adjacent regions)",
+          "Register Allocation (compiler optimization)",
+          "Scheduling, Frequency Assignment, etc."
         ]
       },
       {
-        "heading": "6. Örnek Adım Adım",
+        "heading": "6. Step-by-Step Example",
         "paragraphs": [
-          "V = {A,B,C,D,E}, E = {{A,B},{A,C},{B,C},{B,D},{C,E}}. Azalan derece sırasına göre B(3), C(3), A(2), D(1), E(1). Renk atamaları: B→1, C→2, A→3, D→2, E→1 → Kullanılan renk sayısı: 3."
+          "V = {A,B,C,D,E}, E = {{A,B},{A,C},{B,C},{B,D},{C,E}}. Order by decreasing degree: B(3), C(3), A(2), D(1), E(1). Color assignments: B→1, C→2, A→3, D→2, E→1 → Number of colors used: 3."
         ]
       }
     ]
   },
   {
     "simulation_id": 1,
-    "title": "Bubble Sort: Detaylı Açıklama",
+    "title": "Bubble Sort: Detailed Explanation",
     "sections": [
       {
-        "heading": "1. Giriş",
+        "heading": "1. Introduction",
         "paragraphs": [
-          "Bubble Sort, bitişik elemanları karşılaştırıp gerektiğinde takas yaparak her turda en büyük (ya da en küçük) öğeyi sona iten basit bir sıralama algoritmasıdır."
+          "Bubble Sort is a simple sorting algorithm that compares adjacent elements and swaps them when necessary, pushing the largest (or smallest) element to the end in each pass."
         ]
       },
       {
-        "heading": "2. Temel Kavramlar",
+        "heading": "2. Basic Concepts",
         "paragraphs": [
-          "Dizi (Array): Sabit boyutlu, indeksli veri koleksiyonu.",
-          "Takas (Swap): İki elemanın yerlerini değiştirerek sıralama sağlar."
+          "Array: Fixed-size, indexed collection of data.",
+          "Swap: Exchanging positions of two elements to achieve sorting."
         ]
       },
       {
-        "heading": "3. Algoritma Adımları",
+        "heading": "3. Algorithm Steps",
         "paragraphs": [
-          "n elemanlı dizide i turunda son i eleman zaten sıralı kabul edilir.",
-          "j = 0'dan n-i-2'ye kadar her bitişik çift karşılaştırılır ve gerekirse yer değiştirilir."
+          "In an n-element array, the last i elements are considered sorted after i passes.",
+          "From j = 0 to n-i-2, each adjacent pair is compared and swapped if necessary."
         ]
       },
       {
-        "heading": "4. Zaman Karmaşıklığı",
+        "heading": "4. Time Complexity",
         "paragraphs": [
-          "En Kötü Durum: O(n²)",
-          "En İyi Durum: O(n) (dizi önceden sıralıysa, optimizasyonla)",
-          "Ortalama Durum: O(n²)"
+          "Worst Case: O(n²)",
+          "Best Case: O(n) (if array is pre-sorted, with optimization)",
+          "Average Case: O(n²)"
         ]
       },
       {
-        "heading": "5. Uygulama Alanları",
+        "heading": "5. Application Areas",
         "list": [
-          "Veri yapıları öğretim örnekleri",
-          "Küçük veri kümesi sıralamaları ve prototipleme"
+          "Data structure teaching examples",
+          "Small dataset sorting and prototyping"
         ]
       },
       {
-        "heading": "6. Örnek Adım Adım",
+        "heading": "6. Step-by-Step Example",
         "paragraphs": [
-          "Dizi = [5, 3, 8, 4], Tur 1: [3,5,4,8], Tur 2: [3,4,5,8] → Sonuç: [3,4,5,8]"
+          "Array = [5, 3, 8, 4], Pass 1: [3,5,4,8], Pass 2: [3,4,5,8] → Result: [3,4,5,8]"
         ]
       }
     ]
   },
   {
     "simulation_id": 2,
-    "title": "Linear Search: Detaylı Açıklama",
+    "title": "Linear Search: Detailed Explanation",
     "sections": [
       {
-        "heading": "1. Giriş",
+        "heading": "1. Introduction",
         "paragraphs": [
-          "Linear Search (Doğrusal Arama), bir dizideki elemanları sırayla kontrol ederek aranan değeri bulmaya çalışan basit bir arama algoritmasıdır."
+          "Linear Search is a simple search algorithm that sequentially checks elements in an array to find the target value."
         ]
       },
       {
-        "heading": "2. Temel Kavramlar",
+        "heading": "2. Basic Concepts",
         "paragraphs": [
-          "Dizi (Array): Sıralı veri koleksiyonu.",
-          "İndeks (Index): Dizideki elemanların konumunu belirten sayı."
+          "Array: Ordered collection of data.",
+          "Index: Number indicating the position of elements in the array."
         ]
       },
       {
-        "heading": "3. Algoritma Adımları",
+        "heading": "3. Algorithm Steps",
         "paragraphs": [
-          "Dizinin başından başla.",
-          "Her elemanı aranan değerle karşılaştır.",
-          "Eşleşme bulunursa indeksi döndür.",
-          "Dizinin sonuna kadar devam et."
+          "Start from the beginning of the array.",
+          "Compare each element with the target value.",
+          "If a match is found, return the index.",
+          "Continue until the end of the array."
         ]
       },
       {
-        "heading": "4. Zaman Karmaşıklığı",
+        "heading": "4. Time Complexity",
         "paragraphs": [
-          "En Kötü Durum: O(n)",
-          "En İyi Durum: O(1)",
-          "Ortalama Durum: O(n)"
+          "Worst Case: O(n)",
+          "Best Case: O(1)",
+          "Average Case: O(n)"
         ]
       },
       {
-        "heading": "5. Uygulama Alanları",
+        "heading": "5. Application Areas",
         "list": [
-          "Küçük veri setlerinde arama",
-          "Sıralanmamış dizilerde arama",
-          "Basit veri yapılarında arama"
+          "Searching in small datasets",
+          "Searching in unsorted arrays",
+          "Searching in simple data structures"
         ]
       },
       {
-        "heading": "6. Örnek Adım Adım",
+        "heading": "6. Step-by-Step Example",
         "paragraphs": [
-          "Dizi = [5, 3, 7, 1, 9], Aranan = 1. Adımlar: 5≠1, 3≠1, 7≠1, 1=1 → Bulundu, indeks = 3"
+          "Array = [5, 3, 7, 1, 9], Target = 1. Steps: 5≠1, 3≠1, 7≠1, 1=1 → Found, index = 3"
         ]
       }
     ]
   },
   {
     "simulation_id": 3,
-    "title": "Binary Search: Detaylı Açıklama",
+    "title": "Binary Search: Detailed Explanation",
     "sections": [
       {
-        "heading": "1. Giriş",
+        "heading": "1. Introduction",
         "paragraphs": [
-          "Binary Search (İkili Arama), sıralı bir dizide arama yaparken her adımda arama alanını yarıya indiren verimli bir algoritmadır."
+          "Binary Search is an efficient algorithm that halves the search space at each step when searching in a sorted array."
         ]
       },
       {
-        "heading": "2. Temel Kavramlar",
+        "heading": "2. Basic Concepts",
         "paragraphs": [
-          "Sıralı Dizi: Elemanları belirli bir sırada olan dizi.",
-          "Orta Nokta: Arama alanının ortasındaki eleman."
+          "Sorted Array: Array with elements in a specific order.",
+          "Middle Point: Element at the center of the search space."
         ]
       },
       {
-        "heading": "3. Algoritma Adımları",
+        "heading": "3. Algorithm Steps",
         "paragraphs": [
-          "Dizinin ortasındaki elemanı kontrol et.",
-          "Aranan değer ortadaki elemandan küçükse sol yarıda ara.",
-          "Aranan değer ortadaki elemandan büyükse sağ yarıda ara.",
-          "Eşleşme bulunana veya arama alanı boşalana kadar devam et."
+          "Check the element at the middle of the array.",
+          "If target is smaller than middle element, search in left half.",
+          "If target is larger than middle element, search in right half.",
+          "Continue until match is found or search space is empty."
         ]
       },
       {
-        "heading": "4. Zaman Karmaşıklığı",
+        "heading": "4. Time Complexity",
         "paragraphs": [
-          "En Kötü Durum: O(log n)",
-          "En İyi Durum: O(1)",
-          "Ortalama Durum: O(log n)"
+          "Worst Case: O(log n)",
+          "Best Case: O(1)",
+          "Average Case: O(log n)"
         ]
       },
       {
-        "heading": "5. Uygulama Alanları",
+        "heading": "5. Application Areas",
         "list": [
-          "Sıralı dizilerde hızlı arama",
-          "Veritabanı indeksleme",
-          "Sözlük ve telefon rehberi aramaları"
+          "Fast searching in sorted arrays",
+          "Database indexing",
+          "Dictionary and phone book searches"
         ]
       },
       {
-        "heading": "6. Örnek Adım Adım",
+        "heading": "6. Step-by-Step Example",
         "paragraphs": [
-          "Dizi = [1, 3, 5, 7, 9], Aranan = 7. Adımlar: Ortadaki 5<7, sağ yarıda ara; Ortadaki 7=7 → Bulundu, indeks = 3"
+          "Array = [1, 3, 5, 7, 9], Target = 7. Steps: Middle 5<7, search right half; Middle 7=7 → Found, index = 3"
         ]
       }
     ]
   },
   {
     "simulation_id": 5,
-    "title": "Pathfinding: Detaylı Açıklama",
+    "title": "Pathfinding: Detailed Explanation",
     "sections": [
       {
-        "heading": "1. Giriş",
+        "heading": "1. Introduction",
         "paragraphs": [
-          "Pathfinding (Yol Bulma), bir graf üzerinde iki nokta arasındaki en kısa veya en uygun yolu bulmayı amaçlayan algoritmalar bütünüdür."
+          "Pathfinding is a collection of algorithms that aim to find the shortest or most suitable path between two points on a graph."
         ]
       },
       {
-        "heading": "2. Temel Kavramlar",
+        "heading": "2. Basic Concepts",
         "paragraphs": [
-          "Graf: Düğümler ve kenarlardan oluşan veri yapısı.",
-          "Ağırlık: Kenarların maliyetini belirten değer."
+          "Graph: Data structure consisting of nodes and edges.",
+          "Weight: Value indicating the cost of edges."
         ]
       },
       {
-        "heading": "3. Yaygın Algoritmalar",
+        "heading": "3. Common Algorithms",
         "paragraphs": [
-          "Dijkstra: En kısa yol algoritması, tüm kenarların pozitif ağırlıklı olduğu durumlar için.",
-          "A*: Sezgisel arama algoritması, hedef yönünde tahmin yaparak aramayı hızlandırır.",
-          "BFS: Ağırlıksız graflarda en kısa yol için kullanılır."
+          "Dijkstra: Shortest path algorithm for cases where all edges have positive weights.",
+          "A*: Heuristic search algorithm that speeds up search by making estimates toward the goal.",
+          "BFS: Used for shortest path in unweighted graphs."
         ]
       },
       {
-        "heading": "4. Zaman Karmaşıklığı",
+        "heading": "4. Time Complexity",
         "paragraphs": [
           "Dijkstra: O((V + E) log V)",
-          "A*: O(b^d), b: dallanma faktörü, d: derinlik",
+          "A*: O(b^d), b: branching factor, d: depth",
           "BFS: O(V + E)"
         ]
       },
       {
-        "heading": "5. Uygulama Alanları",
+        "heading": "5. Application Areas",
         "list": [
-          "GPS navigasyon sistemleri",
-          "Oyun AI'ları",
-          "Ağ yönlendirme protokolleri"
+          "GPS navigation systems",
+          "Game AI",
+          "Network routing protocols"
         ]
       },
       {
-        "heading": "6. Örnek Adım Adım",
+        "heading": "6. Step-by-Step Example",
         "paragraphs": [
-          "Graf: A–5→B, A–1→C, B–1→D. Dijkstra(A) → A(0) → C(1) → B(5) → D(6) → En kısa yol: A→C→B→D"
+          "Graph: A–5→B, A–1→C, B–1→D. Dijkstra(A) → A(0) → C(1) → B(5) → D(6) → Shortest path: A→C→B→D"
         ]
       }
     ]

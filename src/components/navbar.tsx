@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "Anasayfa", href: "/" },
-  { label: "Simülasyonlar", href: "/simulations" },
+  { label: "Home", href: "/" },
+  { label: "Simulations", href: "/simulations" },
 ];
 
 export function Navbar() {
@@ -46,7 +46,7 @@ export function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Teste Katıl
+          Take Test
         </Link>
       </Button>
     </nav>

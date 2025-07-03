@@ -8,26 +8,26 @@ import Image from "next/image";
 
 const allSimulations = simulations.simulations;
 const topics = [
-  "Tümü",
+  "All",
   ...Array.from(new Set(allSimulations.map((sim) => sim.topic))),
 ];
 const difficulties = [
-  "Tümü",
+  "All",
   ...Array.from(new Set(allSimulations.map((sim) => sim.difficulty))),
 ];
 
 const sortOptions = [
-  { label: "Konu", value: "topic-json" },
-  { label: "Zorluk (Kolay → Zor)", value: "difficulty-asc" },
-  { label: "Zorluk (Zor → Kolay)", value: "difficulty-desc" },
-  { label: "İsim", value: "title-az" },
+  { label: "Topic", value: "topic-json" },
+  { label: "Difficulty (Easy → Hard)", value: "difficulty-asc" },
+  { label: "Difficulty (Hard → Easy)", value: "difficulty-desc" },
+  { label: "Name", value: "title-az" },
 ];
-const difficultyOrder = { Kolay: 1, Orta: 2, Zor: 3 };
+const difficultyOrder = { Easy: 1, Medium: 2, Hard: 3 };
 
 const Simulations = () => {
   const [search, setSearch] = useState("");
-  const [topic, setTopic] = useState("Tümü");
-  const [difficulty, setDifficulty] = useState("Tümü");
+  const [topic, setTopic] = useState("All");
+  const [difficulty, setDifficulty] = useState("All");
   const [sortBy, setSortBy] = useState("topic-json");
   const [simulations, setSimulations] = useState(allSimulations);
 
@@ -35,13 +35,13 @@ const Simulations = () => {
     const matchesSearch = sim.title
       .toLowerCase()
       .includes(search.toLowerCase());
-    const matchesTopic = topic === "Tümü" || sim.topic === topic;
+    const matchesTopic = topic === "All" || sim.topic === topic;
     const matchesDifficulty =
-      difficulty === "Tümü" || sim.difficulty === difficulty;
+      difficulty === "All" || sim.difficulty === difficulty;
     return matchesSearch && matchesTopic && matchesDifficulty;
   });
 
-  // Sıralama
+  // Sorting
   filtered = filtered.slice().sort((a, b) => {
     if (sortBy === "topic-json") {
       return topics.indexOf(a.topic) - topics.indexOf(b.topic);
@@ -92,9 +92,9 @@ const Simulations = () => {
       </div>
       <div className="max-w-7xl mx-auto mb-10 relative z-10">
         <h1 className="text-3xl mt-12 md:text-4xl font-bold text-white mb-8">
-          Simülasyonlar
+          Simulations
         </h1>
-        {/* Sekmeler (Tabs) */}
+        {/* Tabs */}
         <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
           {topics.map((t) => (
             <button
@@ -110,7 +110,7 @@ const Simulations = () => {
             </button>
           ))}
         </div>
-        {/* Filtre ve Sort */}
+        {/* Filter and Sort */}
         <div className="flex flex-col md:flex-row md:items-end gap-4 mb-10">
           <div className="flex gap-2 flex-wrap">
             {difficulties.map((d) => (
@@ -128,7 +128,7 @@ const Simulations = () => {
           </div>
           <input
             type="text"
-            placeholder="Simülasyon ara..."
+            placeholder="Search simulations..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="rounded-xl px-4 py-2 bg-white/10 border border-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#0fb9b1] w-full md:w-64"
@@ -145,11 +145,11 @@ const Simulations = () => {
             ))}
           </select>
         </div>
-        {/* Kartlar */}
+        {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {filtered.length === 0 && (
             <div className="col-span-full text-center text-white/70 py-16 text-xl">
-              Hiç simülasyon bulunamadı.
+              No simulations found.
             </div>
           )}
           {filtered.map((sim, i) => (
@@ -167,7 +167,7 @@ const Simulations = () => {
             >
               {" "}
               <Link href={`/simulations/${sim.id}`}>
-                {/* Görsel ve overlay */}
+                {/* Image and overlay */}
                 <div className="w-full h-60 md:h-72 bg-[#0fb9b1]/10 flex items-center justify-center overflow-hidden relative">
                   <Image
                     src={sim.image}
@@ -187,7 +187,7 @@ const Simulations = () => {
                     </span>
                   </div>
                 </div>
-                {/* Kart içeriği */}
+                {/* Card content */}
                 <div className="flex-1 flex flex-col justify-end p-7 w-full">
                   <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg line-clamp-2">
                     {sim.title}
@@ -196,7 +196,7 @@ const Simulations = () => {
                     {sim.desc}
                   </p>
                   <Button className="rounded-xl cursor-pointer bg-[#0fb9b1] hover:bg-[#0fb9b1]/90 font-semibold px-8 py-3 text-lg shadow-lg shadow-[#0fb9b1]/20 group-hover:scale-105 group-hover:shadow-[#0fb9b1]/40 transition-all duration-300">
-                    Simülasyonu Aç
+                    Open Simulation
                   </Button>
                 </div>
               </Link>

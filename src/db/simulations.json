@@ -3,19 +3,19 @@
     {
       "id": 1,
       "title": "Bubble Sort",
-      "desc": "Sıralama algoritmalarının temelini öğrenin.",
+      "desc": "Learn the fundamentals of sorting algorithms.",
       "image": "/images/simulations/bubble.png",
-      "topic": "Sıralama",
-      "difficulty": "Kolay",
+      "topic": "Sorting",
+      "difficulty": "Easy",
       "path": "BubbleSort",
       "related_simulations": [2, 3],
       "real_life_examples": [
         {
-          "example": "Oyun kağıtlarını ya da kartları el ile sıralamak",
+          "example": "Sorting playing cards or cards by hand",
           "image": "/images/real_life/sortcard.jpeg"
         },
         {
-          "example": "Basit skor listesi güncellemeleri",
+          "example": "Simple score list updates",
           "image": "/images/real_life/tahta.jpeg"
         }
       ]
@@ -23,15 +23,15 @@
     {
       "id": 2,
       "title": "Linear Search",
-      "desc": "En baştan başla, en sona kadar",
+      "desc": "Start from the beginning, go to the end",
       "image": "/images/simulations/linear.png",
-      "topic": "Arama",
-      "difficulty": "Kolay",
+      "topic": "Search",
+      "difficulty": "Easy",
       "path": "LinearSearch",
       "related_simulations": [1, 3],
       "real_life_examples": [
         {
-          "example": "Bir listede belirli bir ismi bulmak",
+          "example": "Finding a specific name in a list",
           "image": "/images/real_life/kisayol.jpeg"
         }
       ]
@@ -39,15 +39,15 @@
     {
       "id": 3,
       "title": "Binary Search",
-      "desc": "Önce diziyi sırala, sonra arama yap!",
+      "desc": "First sort the array, then search!",
       "image": "/images/simulations/binary.png",
-      "topic": "Arama",
-      "difficulty": "Orta",
+      "topic": "Search",
+      "difficulty": "Medium",
       "path": "BinarySearch",
       "related_simulations": [1, 2],
       "real_life_examples": [
         {
-          "example": "Sözlükte bir kelimeyi hızlıca bulmak",
+          "example": "Quickly finding a word in a dictionary",
           "image": "/images/real_life/tahta.jpeg"
         }
       ]
@@ -55,19 +55,19 @@
     {
       "id": 4,
       "title": "Graph Coloring",
-      "desc": "A ile düğüm koy, Sağ klik ile iki düğümü birleştir",
+      "desc": "Press A to place nodes, Right click to connect two nodes",
       "image": "/images/simulations/graph.png",
-      "topic": "Graf",
-      "difficulty": "Orta",
+      "topic": "Graph",
+      "difficulty": "Medium",
       "path": "GraphColoring",
       "related_simulations": [5],
       "real_life_examples": [
         {
-          "example": "Harita (ülke/eyalet) renkleme",
+          "example": "Map (country/state) coloring",
           "image": "/images/real_life/colormap.jpeg"
         },
         {
-          "example": "Derleyici register atama optimizasyonu",
+          "example": "Compiler register assignment optimization",
           "image": "/images/real_life/register.jpeg"
         }
       ]
@@ -75,19 +75,19 @@
     {
       "id": 5,
       "title": "Pathfinding",
-      "desc": "Yol ağrılığını seçtikten sonra Q ile döşe, duvar için E tuşuna bas",
+      "desc": "After selecting path weight, press Q to place, press E for walls",
       "image": "/images/simulations/pathfinding.png",
-      "topic": "Graf",
-      "difficulty": "Zor",
+      "topic": "Graph",
+      "difficulty": "Hard",
       "path": "Pathfinding",
       "related_simulations": [4],
       "real_life_examples": [
         {
-          "example": "GPS navigasyon rota hesaplama",
+          "example": "GPS navigation route calculation",
           "image": "/images/real_life/yolbul.jpeg"
         },
         {
-          "example": "Ağ paket yönlendirme",
+          "example": "Network packet routing",
           "image": "/images/real_life/network.jpeg"
         }
       ]

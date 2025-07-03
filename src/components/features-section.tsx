@@ -3,18 +3,18 @@ import { LucideSparkles, LucideBookOpen, LucideUsers } from "lucide-react";
 const features = [
   {
     icon: <LucideSparkles className="w-8 h-8 text-[#0fb9b1]" />,
-    title: "İnteraktif Simülasyonlar",
-    desc: "Algoritmaları adım adım, görsel ve etkileşimli şekilde öğrenin.",
+    title: "Interactive Simulations",
+    desc: "Learn algorithms step by step, visually and interactively.",
   },
   {
     icon: <LucideBookOpen className="w-8 h-8 text-[#0fb9b1]" />,
-    title: "Günlük Hayattan Örnekler",
-    desc: "Karmaşık kavramları gerçek hayat örnekleriyle kolayca kavrayın.",
+    title: "Real-Life Examples",
+    desc: "Easily understand complex concepts through real-life examples.",
   },
   {
     icon: <LucideUsers className="w-8 h-8 text-[#0fb9b1]" />,
-    title: "Herkes İçin Erişilebilir",
-    desc: "Her yaştan ve meslekten insan için anlaşılır ve erişilebilir içerik.",
+    title: "Accessible for Everyone",
+    desc: "Understandable and accessible content for people of all ages and professions.",
   },
 ];
 
@@ -22,7 +22,7 @@ export function FeaturesSection() {
   return (
     <section className="relative z-10 w-full flex flex-col items-center py-20">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-        Neden CS Sim?
+        Why CS Sim?
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
         {features.map((f, i) => (
